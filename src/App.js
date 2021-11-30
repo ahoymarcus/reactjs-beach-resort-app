@@ -1,6 +1,7 @@
 // https://www.youtube.com/watch?v=l0JbuMVXaTs
-// 0 hr 21' 10 ''
+// 0 hr 25' 10 ''
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import './App.css'; 
 
@@ -17,10 +18,15 @@ function App() {
 
   return (
     <>
-      <Home />
-      <Rooms />
-      <SingleRoom />
-      <Error />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="rooms" element={<Rooms />} />
+          <Route path="single-room" element={<SingleRoom />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </Router>
+      
     </>
   );
 }
