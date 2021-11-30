@@ -1,5 +1,7 @@
 // https://www.youtube.com/watch?v=l0JbuMVXaTs
-// 0 hr 33' 10 ''
+// 0 hr 34' 10 ''
+// https://www.youtube.com/watch?v=0cSVuySEB0A
+// 0 hr 33' 40 ''
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -25,15 +27,8 @@ function App() {
 				<Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="rooms" element={<Rooms />}>
-						<Route index element={
-								<main>
-									<p>rooms again</p>
-								</main>
-							} 
-						/>
-						<Route path=":slug" element={<SingleRoom />} />
-					</Route>
+          <Route path="/rooms" element={<Rooms />} />
+					<Route path="/rooms/:slug" element={<SingleRoom />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </Router>
